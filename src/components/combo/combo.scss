@@ -1,0 +1,27 @@
+.Combo{
+    width: 200px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+
+    .ComboItem{
+        border-radius: 5px;
+        padding: 0.25rem;
+        margin: 0 0.25rem;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        &:first-child{
+            margin-top: 0.25rem;
+        }
+        &:last-child{
+            margin-bottom: 0.25rem;
+        }
+    cursor: pointer;
+        &:hover{
+            background-color: rgba(185, 29, 29, 0.562);
+        }
+    }
+}
