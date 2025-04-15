@@ -1,11 +1,6 @@
 import {ActionButton} from "@/components/buttons/actionButton";
-import { Combo } from "@/components/Library";
+import { Combo, PassField  } from "@/components/Library";
 import { combo } from "@/types";
-import { Width } from "@/types/types";
-
-// Создайте массив с помощью функции
-
-// Создайте массив comboContent с этими значениями
 const comboTest: combo = {
   comboContent: [
     {
@@ -26,11 +21,15 @@ const comboTest: combo = {
     },
     {
       id: 5,
-      content: "sm"
+      content: "small"
     },
     {
-      id: 1,
+      id: 6,
       content: "general"
+    },
+    {
+      id: 7,
+      content: "wibe"
     },
   ]
 };
@@ -49,6 +48,13 @@ export default function Home() {
         </div>
        <div className="flex flex-col gap-5">
          <ActionButton text="press me" baseAction= "todo" action= {check} width= "general"/>
+       </div>
+       <div className=" w-60">
+        <PassField label="пароль"
+        hint="введите пароль"
+        passHideButton="/icons/password/passwordHid.svg"
+        passOpenButton = "/icons/password/passwordOpen.svg" 
+        />
        </div>
 </div>
     </div>

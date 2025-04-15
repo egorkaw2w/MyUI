@@ -1,27 +1,48 @@
-.Combo{
-    width: 200px;
-    border: 1px solid #000;
+.Combo {
+  width: 200px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background: white;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  cursor: pointer;
+  outline: none;
+
+  &:not(.open) {
+    max-height: 50px;
+  }
+
+  &.open {
+    max-height: var(--maxitems, 300px);
+  }
+
+  .ComboItem {
+    padding: 0.5rem;
+    margin: 0 0.25rem;
     border-radius: 5px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+
+    &.selected {
+      background-color: rgba(185, 29, 29, 0.2);
+    }
+
+    &:hover {
+      background-color: rgba(185, 29, 29, 0.562);
+    }
+
+    &:first-child {
+      margin-top: 0.25rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .ComboList {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-
-
-    .ComboItem{
-        border-radius: 5px;
-        padding: 0.25rem;
-        margin: 0 0.25rem;
-        overflow-x: hidden;
-        text-overflow: ellipsis;
-        &:first-child{
-            margin-top: 0.25rem;
-        }
-        &:last-child{
-            margin-bottom: 0.25rem;
-        }
-    cursor: pointer;
-        &:hover{
-            background-color: rgba(185, 29, 29, 0.562);
-        }
-    }
+  }
 }
