@@ -1,5 +1,6 @@
 import {ActionButton} from "@/components/buttons/actionButton";
-import { Combo, PassField  } from "@/components/Library";
+import { Courusel } from "@/components/courusel";
+import { Calendar, Combo, PassField  } from "@/components/Library";
 import { combo } from "@/types";
 const comboTest: combo = {
   comboContent: [
@@ -43,11 +44,14 @@ export default function Home() {
       <h1 className="text-center">Hello! This is my UI lib</h1>
 
 <div className="flex flex-col gap-5">
-        <div className="flex ">
+        {/* <div className="flex ">
           <Combo comboContent={comboTest.comboContent}/>
         </div>
        <div className="flex flex-col gap-5">
-         <ActionButton text="press me" baseAction= "todo" action= {check} width= "general"/>
+         <ActionButton text="press me"
+          baseAction= "todo"
+           action= {check}
+            width= "md"/>
        </div>
        <div className=" w-60">
         <PassField label="пароль"
@@ -56,6 +60,10 @@ export default function Home() {
         passOpenButton = "/icons/password/passwordOpen.svg" 
         />
        </div>
+       <Courusel/> */}
+<div className="testCalendar">
+         <Calendar/>
+</div>
 </div>
     </div>
   )

@@ -4,7 +4,7 @@ import "./passwordFiled.scss"
 // import Image from "next/image";
 import React, {useState } from "react";
 
-export const PassField = ({label,hint,passHideButton,passOpenButton, className, labelClassName}:PasswordField) => {
+export const PassField = ({label,hint,passHideButton,passOpenButton, className, labelClassName, StateOfValid = "base"}:PasswordField) => {
     const [isButtonHide, setIsButtonHide] = useState<boolean>(true)
 
     const CheckPass = () => {
@@ -15,7 +15,7 @@ export const PassField = ({label,hint,passHideButton,passOpenButton, className, 
         <div className="passInput ">
             <label className={`${labelClassName}`}>{label}
                 <div className="inputArea">
-                    <input className={className} type={isButtonHide ? "password": "text"} placeholder={hint} />
+                    <input className={`${className} ${StateOfValid}`} type={isButtonHide ? "password": "text"} placeholder={hint} />
                     <div className="passIcon"
                      onClick={CheckPass}
                      data-hide = {isButtonHide}
