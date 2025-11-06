@@ -1,6 +1,6 @@
-import {ActionButton} from "@/components/buttons/actionButton";
+import { ActionButton } from "@/components/buttons/actionButton";
 import { Courusel } from "@/components/courusel";
-import { Calendar, Combo, PassField  } from "@/components/Library";
+import { Calendar, Combo, PassField } from "@/components/Library";
 import { combo } from "@/types";
 const comboTest: combo = {
   comboContent: [
@@ -36,14 +36,14 @@ const comboTest: combo = {
 };
 
 export default function Home() {
-  const check = () => {
-    console.log("asd")
-  }
+  // const check = () => {
+  //   console.log("asd")
+  // }
   return (
     <div className="Lib container mx-auto">
       <h1 className="text-center">Hello! This is my UI lib</h1>
 
-<div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5">
         {/* <div className="flex ">
           <Combo comboContent={comboTest.comboContent}/>
         </div>
@@ -61,10 +61,12 @@ export default function Home() {
         />
        </div>
        <Courusel/> */}
-<div className="testCalendar">
-         <Calendar/>
-</div>
-</div>
+        <div className="testCalendar">
+          <Calendar targetInputId="testinput" />
+        </div>
+
+        <input className="testinput" type="text" id="testinput" readOnly />
+      </div>
     </div>
   )
 }
