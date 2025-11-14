@@ -1,56 +1,89 @@
-.calendar{
-    min-height: 250px ;
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    background-color: green;
-    color: white;
-    &__header{
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &__MonthMaster{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        justify-items: center;
-        align-items: center;
+    .calendar {
         width: 100%;
-    }
-    &__emptyDays-element{
-        opacity: 0.3;
-    }
-    &__active-element{
-        cursor: pointer;
+        height: auto;
+        padding: 1rem;
+        color: white;
+        font-family: system-ui, sans-serif;
+        background-color: green;
 
-    }
-    .today{
-        background-color: yellow;
-        color: black;
-        border-radius: 100%;
-    }
-    &__body{
-        .calendar__weekDays{
+        &__header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        &__MonthMaster {
             display: grid;
-            grid-template-columns: repeat(7,1fr);
+            grid-template-columns: repeat(3, 1fr);
             justify-items: center;
+            width: 100%;
             align-items: center;
         }
-        .calendar__monthDays{
-            display: grid;
-            grid-template-columns: repeat(7,1fr);
-            justify-items: center;
-            align-items: center;
-            .item{
-                width: 1.75rem;
-                height: 1.75rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-sizing: border-box;
+
+        .calendar__back,
+        .calendar__forward {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+
+        &__body {
+            .calendar__weekDays {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                justify-items: center;
+                margin-bottom: 0.5rem;
+                font-weight: 600;
+            }
+
+            .calendar__monthDays {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                justify-items: center;
+                gap: 4px;
+
+                .item {
+                    width: 1.75rem;
+                    height: 1.75rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 6px;
+                    transition: background 0.2s;
+                    cursor: pointer;
+
+                    &.today {
+                        background-color: yellow !important;
+                        color: black;
+                        font-weight: bold;
+                    }
+
+                    &.selected,
+                    &.in-range,
+                    &.range-start,
+                    &.range-end {
+                        background-color: orange !important;
+                        color: black;
+                        font-weight: bold;
+                    }
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.1);
+                    }
+                }
             }
         }
+
+        &__emptyDays-element {
+            opacity: 0.3;
+        }
+
+        &__active-element {
+            cursor: pointer;
+        }
     }
-}
